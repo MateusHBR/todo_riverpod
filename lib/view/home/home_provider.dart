@@ -14,7 +14,7 @@ final class HomeNotifier extends AutoDisposeNotifier<List<Todo>> {
 
   void addTodo(String name) {
     final newTodo = Todo(
-      id: ref.read(uuidProvider).v4(),
+      id: ref.read(uuidServiceProvider).v4(),
       name: name,
     );
 
