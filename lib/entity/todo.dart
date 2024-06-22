@@ -8,6 +8,14 @@ final class Todo {
     this.isCompleted = false,
   });
 
+  factory Todo.fromJson(Map<String, dynamic> json) {
+    return Todo(
+      id: json['id'],
+      name: json['name'],
+      isCompleted: json['is_completed'],
+    );
+  }
+
   final String id;
   final String name;
   final bool isCompleted;
@@ -22,5 +30,13 @@ final class Todo {
       name: name ?? this.name,
       isCompleted: isCompleted ?? this.isCompleted,
     );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'is_completed': isCompleted,
+    };
   }
 }
