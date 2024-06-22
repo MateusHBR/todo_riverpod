@@ -41,6 +41,7 @@ dependencies:
   meta: ^1.12.0
   uuid: ^4.4.0
   shared_preferences: ^2.2.3
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +49,8 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   custom_lint: ^0.6.4
   riverpod_lint: ^2.3.10
+  test: ^1.25.2
+  mocktail: ^1.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

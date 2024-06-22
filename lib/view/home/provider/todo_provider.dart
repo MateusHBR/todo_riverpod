@@ -30,10 +30,9 @@ final class TodoNotifier extends AutoDisposeAsyncNotifier<List<Todo>> {
 
   Future<void> _saveTodosState() async {
     if (!state.hasValue) return;
-    final todos = state.value!.map((el) => el.toJson()).toList();
     await ref.read(localStorageServiceProvider).save(
           key: _kTodoStorageKey,
-          data: jsonEncode(todos),
+          data: jsonEncode(state.value!),
         );
   }
 

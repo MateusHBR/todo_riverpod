@@ -1,7 +1,8 @@
+import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
 @immutable
-final class Todo {
+final class Todo extends Equatable {
   const Todo({
     required this.id,
     required this.name,
@@ -19,6 +20,13 @@ final class Todo {
   final String id;
   final String name;
   final bool isCompleted;
+
+  @override
+  List<Object> get props => [
+        id,
+        name,
+        isCompleted,
+      ];
 
   Todo copyWith({
     String? id,
