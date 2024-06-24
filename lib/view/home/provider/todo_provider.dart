@@ -10,7 +10,7 @@ final asyncTodosProvider =
   TodoNotifier.new,
 );
 
-final class TodoNotifier extends AutoDisposeAsyncNotifier<List<Todo>> {
+class TodoNotifier extends AutoDisposeAsyncNotifier<List<Todo>> {
   @override
   Future<List<Todo>> build() {
     return _fetchTodos();

@@ -10,7 +10,9 @@ class TodoListView extends ConsumerWidget {
     final asyncTodos = ref.watch(asyncTodosProvider);
 
     return asyncTodos.when(
-      error: (_, __) => const SizedBox(),
+      error: (_, __) => const SizedBox(
+        key: Key('ErrorTodoVisible'),
+      ),
       loading: () => const Center(
         child: CircularProgressIndicator(),
       ),
