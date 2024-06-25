@@ -20,3 +20,24 @@ Future<void> loadWidget(
     ),
   );
 }
+
+extension WidgetTesterExtensions on WidgetTester {
+  Future<void> dismissElement(
+    Finder finder, {
+    required AxisDirection gestureDirection,
+    double initialOffsetFactor = 0.0,
+  }) async {
+    final Offset delta = switch (gestureDirection) {
+      AxisDirection.left => const Offset(-300, 0.0),
+      AxisDirection.right => const Offset(300, 0.0),
+      AxisDirection.up => const Offset(0.0, -300),
+      AxisDirection.down => const Offset(0.0, 300),
+    };
+    await fling(
+      finder,
+      delta,
+      1000.0,
+      initialOffset: delta * initialOffsetFactor,
+    );
+  }
+}
