@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'widget/todo_list_view/todo_list_view.dart';
-import 'widget/todo_text_field_section/todo_text_field_section.dart';
+import 'package:todo_riverpod/view/fibo/fibo_view.dart';
+import 'package:todo_riverpod/view/todo/todo_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -11,28 +10,27 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  final textFieldController = TextEditingController();
-
-  @override
-  void dispose() {
-    textFieldController.dispose();
-    super.dispose();
-  }
+  var _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('TODO List'),
-      ),
-      body: Column(
-        children: [
-          TodoTextFieldSection(textFieldController: textFieldController),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Divider(),
+      body: const [
+        TodoView(),
+        FiboView(),
+      ][_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: (newPage) => setState(() => _selectedIndex = newPage),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_outlined),
+            label: 'List',
           ),
-          const Expanded(child: TodoListView()),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calculate_outlined),
+            label: 'Fibonacci',
+          ),
         ],
       ),
     );

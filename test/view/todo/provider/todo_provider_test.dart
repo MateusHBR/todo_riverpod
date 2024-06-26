@@ -7,7 +7,7 @@ import 'package:uuid/uuid.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:todo_riverpod/entity/todo.dart';
 import 'package:todo_riverpod/service/local_storage/local_storage.dart';
-import 'package:todo_riverpod/view/home/provider/todo_provider.dart';
+import 'package:todo_riverpod/view/todo/provider/todo_provider.dart';
 
 import '../../../provider_test_utils.dart';
 

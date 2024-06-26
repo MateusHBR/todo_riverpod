@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:todo_riverpod/entity/todo.dart';
-import 'package:todo_riverpod/view/home/provider/todo_provider.dart';
-import 'package:todo_riverpod/view/home/widget/todo_list_view/todo_list_view.dart';
+import 'package:todo_riverpod/view/todo/provider/todo_provider.dart';
+import 'package:todo_riverpod/view/todo/widget/todo_list_view/todo_list_view.dart';
 
 import '../../../../named_variants.dart';
 import '../../../../widget_test_utils.dart';
